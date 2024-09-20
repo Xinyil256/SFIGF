@@ -1,0 +1,64 @@
+
+
+name: sfigf
+algorithm: sfigf #HAPNN #arfnet #ugcn_s4nba0
+nEpochs: 3000
+gpu_mode: True
+save_best: True
+gpus: [5]
+threads: 16  #num_works
+log_dir: ./results/log/
+
+
+seed: 123
+checkpoint: ./results/checkpoint/sfigf/
+data_dir_train: ./Pan_Datasets/training_data/train_wv3.h5
+data_dir_eval: ./Pan_Datasets/validation_data/valid_wv3.h5
+source_ms: ms
+source_pan: pan 
+
+pretrain:
+  pretrained: False
+  pre_sr: GPPNN3_4_1647496009/best_900.pth
+  pre_folder: /home/kemove/keyu/newpan/checkpoint/gppnn3pami/
+
+test:  #用于指标测试的代码
+  algorithm: girnet_sca #arfnet
+  type: test #[test, eval]
+  data_dir: ./Pan_Datasets/test_data/wv3/test_wv3.h5
+  source_ms: ms
+  source_pan: pan
+  model: ./results/checkpoint/sfigf/best.pth #pannetnipsi_4_1653126019/latest.pth #arfnet_4_1652535888/best.pth  # no softmax latest  best
+  # model: GPPNN3_4_1647436525/latest.pth   #softmax
+  save_dir: ./results/test/sfigf/
+
+data:
+  upsacle:  4
+  batch_size: 10 #4
+  patch_size: 128
+  data_augmentation: False                                                                                                                                                                                               
+  n_colors: 8
+  rgb_range: 255
+  normalize : False
+  img_scale: 2047.0
+  
+schedule:
+  lr: 8e-4
+  decay1: 1700
+  decay2: 1900
+  decay3: 2400
+  gamma: 0.5
+  optimizer: ADAM #[ADAM, SGD, RMSprop]
+  momentum: 0.9 #SGD momentum
+  beta1: 0.9 #ADAM beta
+  beta2: 0.999 #ADAM beta
+  epsilon: 1e-8 #ADAM epsilon
+  alpha: 0.9 #RMSprop alpha
+  weight_dency: 0
+  gclip: -1  #0.4  0.04  -1
+  loss: MSE #[MSE, L1]
+  use_YCbCr: False
+  base_filter: 32
+  
+
+

@@ -1,0 +1,13 @@
+set -euxo pipefail
+
+# OMP_NUM_THREADS=8 CUDA_VISIBLE_DEVICES=5 python main.py --test --checkpoint ./workspace/checkpoints/girnet_sca_ch32_0714_4.pth.tar --name girnet_sca_ch32_0714_4 --model GIRNet_sca --dataset Middlebury --scale 4 --interpolation bicubic --data_root ./data/01_Middlebury_Dataset --base_channel 32  
+# OMP_NUM_THREADS=8 CUDA_VISIBLE_DEVICES=5 python main.py --test --checkpoint ./workspace/checkpoints/girnet_sca_ch32_0714_8.pth.tar --name girnet_sca_ch32_0714_8 --model GIRNet_sca --dataset Middlebury --scale 8 --interpolation bicubic --data_root ./data/01_Middlebury_Dataset --base_channel 32  
+OMP_NUM_THREADS=8 CUDA_VISIBLE_DEVICES=5 python main.py --test --checkpoint ./workspace/checkpoints/girnet_sca_ch32_0802_16.pth.tar --name girnet_sca_ch32_0802_16 --model GIRNet_sca --dataset Middlebury --scale 16 --interpolation bicubic --data_root ./data/01_Middlebury_Dataset --base_channel 32
+
+# OMP_NUM_THREADS=8 CUDA_VISIBLE_DEVICES=5 python main.py --test --checkpoint ./workspace/checkpoints/girnet_sca_ch32_0714_4.pth.tar --name girnet_sca_ch32_0714_4 --model GIRNet_sca --dataset Lu --scale 4 --interpolation bicubic --data_root ./data/03_RGBD_Dataset --base_channel 32  
+# OMP_NUM_THREADS=8 CUDA_VISIBLE_DEVICES=5 python main.py --test --checkpoint ./workspace/checkpoints/girnet_sca_ch32_0714_8.pth.tar --name girnet_sca_ch32_0714_8 --model GIRNet_sca --dataset Lu --scale 8 --interpolation bicubic --data_root ./data/03_RGBD_Dataset --base_channel 32  
+# OMP_NUM_THREADS=8 CUDA_VISIBLE_DEVICES=5 python main.py --test --checkpoint ./workspace/checkpoints/girnet_sca_ch32_0714.pth.tar --name girnet_sca_ch32_0714 --model GIRNet_sca --dataset Lu --scale 16 --interpolation bicubic --data_root ./data/03_RGBD_Dataset --base_channel 32  
+
+# # OMP_NUM_THREADS=8 CUDA_VISIBLE_DEVICES=5 python main.py --test --checkpoint ./workspace/checkpoints/girnet_sca_ch32_0714_4.pth.tar --name girnet_sca_ch32_0714_4 --model GIRNet_sca --dataset NYU --scale 4 --interpolation bicubic --data_root /home/amax/Documents/yxxxl/oridata/NYU_test --base_channel 32  
+# # OMP_NUM_THREADS=8 CUDA_VISIBLE_DEVICES=5 python main.py --test --checkpoint ./workspace/checkpoints/girnet_sca_ch32_0714_8.pth.tar --name girnet_sca_ch32_0714_8 --model GIRNet_sca --dataset NYU --scale 8 --interpolation bicubic --data_root /home/amax/Documents/yxxxl/oridata/NYU_test --base_channel 32  
+OMP_NUM_THREADS=8 CUDA_VISIBLE_DEVICES=5 python main.py --test --checkpoint ./workspace/checkpoints/girnet_sca_ch32_0802_16.pth.tar --name girnet_sca_ch32_0802_16 --model GIRNet_sca --dataset NYU --scale 16 --interpolation bicubic --data_root /home/amax/Documents/yxxxl/oridata/NYU_test --base_channel 32  
