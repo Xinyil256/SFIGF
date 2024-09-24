@@ -1,0 +1,55 @@
+algorithm: mff_cunet
+checkpoint: /home/amax/Documents/yxxxl/pansharpening/results/checkpoint/mff_cunet/
+data:
+  batch_size: 4
+  data_augmentation: false
+  img_scale: 2047.0
+  n_colors: 3
+  name: Real-MFF
+  normalize: false
+  num: 650
+  patch_size: 128
+  rgb_range: 255
+  upsacle: 4
+data_dir_eval: /home/amax/Documents/yxxxl/oridata/RealMFF
+data_dir_train: /home/amax/Documents/yxxxl/oridata/RealMFF
+gpu_mode: true
+gpus:
+- 3
+log_dir: /home/amax/Documents/yxxxl/pansharpening/results/log/
+nEpochs: 3000
+name: mff_cunet
+pretrain:
+  pre_folder: /home/kemove/keyu/newpan/checkpoint/gppnn3pami/
+  pre_sr: GPPNN3_4_1647496009/best_900.pth
+  pretrained: false
+save_best: true
+schedule:
+  alpha: 0.9
+  base_filter: 32
+  beta1: 0.9
+  beta2: 0.999
+  decay1: 1700
+  decay2: 1900
+  decay3: 2400
+  epsilon: 1.0e-08
+  gamma: 0.5
+  gclip: -1
+  loss: MSE
+  lr: 0.0008
+  momentum: 0.9
+  optimizer: ADAM
+  use_YCbCr: false
+  weight_dency: 0
+seed: 123
+source_ms: ms
+source_pan: pan
+test:
+  algorithm: mff_cunet
+  data_dir: /home/amax/Documents/yxxxl/oridata/RealMFF
+  model: /home/amax/Documents/yxxxl/pansharpening/results/checkpoint/mff_cunet/mff_cunet_Real-MFF_1689666690/best.pth
+  save_dir: /home/amax/Documents/yxxxl/pansharpening/results/test/Real-MFF/mff_cunet/
+  source_ms: ms
+  source_pan: pan
+  type: test
+threads: 16

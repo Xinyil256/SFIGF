@@ -1,0 +1,53 @@
+algorithm: dkn
+checkpoint: /home/amax/Documents/yxxxl/pansharpening/results/checkpoint/dkn/
+data:
+  batch_size: 4
+  data_augmentation: false
+  img_scale: 2047.0
+  n_colors: 8
+  normalize: false
+  patch_size: 128
+  rgb_range: 255
+  upsacle: 4
+data_dir_eval: /home/amax/Documents/yxxxl/oridata/Pan_Datasets/validation_data/valid_wv3.h5
+data_dir_train: /home/amax/Documents/yxxxl/oridata/Pan_Datasets/training_data/train_wv3.h5
+gpu_mode: true
+gpus:
+- 0
+log_dir: /home/amax/Documents/yxxxl/pansharpening/results/log/
+nEpochs: 3000
+name: dkn
+pretrain:
+  pre_folder: /home/kemove/keyu/newpan/checkpoint/gppnn3pami/
+  pre_sr: GPPNN3_4_1647496009/best_900.pth
+  pretrained: false
+save_best: true
+schedule:
+  alpha: 0.9
+  base_filter: 32
+  beta1: 0.9
+  beta2: 0.999
+  decay1: 1700
+  decay2: 1900
+  decay3: 2400
+  epsilon: 1.0e-08
+  gamma: 0.5
+  gclip: -1
+  loss: MSE
+  lr: 0.0008
+  momentum: 0.9
+  optimizer: ADAM
+  use_YCbCr: false
+  weight_dency: 0
+seed: 123
+source_ms: ms
+source_pan: pan
+test:
+  algorithm: gfnet_sa7
+  data_dir: /home/ubuntu/yxxxl2/oridata/Pan_Datasets/test_data/wv3/test_wv3.h5
+  model: /home/ubuntu/yxxxl2/GDSR/pansharpening/results/checkpoint/gfnet_sa7/gfnet_sa7_4_1684682591/best.pth
+  save_dir: /home/ubuntu/yxxxl2/GDSR/pansharpening/results/test/gfnet_sa7/
+  source_ms: ms
+  source_pan: pan
+  type: test
+threads: 16

@@ -1,0 +1,17 @@
+set -euxo pipefail 
+
+OMP_NUM_THREADS=8 CUDA_VISIBLE_DEVICES=1 python main.py --test --checkpoint ./workspace/checkpoints/girnet_ca_ch32_0723_noisy_4.pth.tar --name girnet_ca_ch32_0723_noisy_4 --model SFIGF --dataset NoisyMiddlebury --scale 4 --interpolation bicubic --data_root ./data/Middlebury --base_channel 32 --noisy --save
+OMP_NUM_THREADS=8 CUDA_VISIBLE_DEVICES=1 python main.py --test --checkpoint ./workspace/checkpoints/girnet_ca_ch32_0723_noisy_8.pth.tar --name girnet_ca_ch32_0723_noisy_8 --model SFIGF --dataset NoisyMiddlebury --scale 8 --interpolation bicubic --data_root ./data/Middlebury --base_channel 32 --noisy --save
+OMP_NUM_THREADS=8 CUDA_VISIBLE_DEVICES=1 python main.py --test --checkpoint ./workspace/checkpoints/girnet_ca_ch32_0724_noisy_16.pth.tar --name girnet_ca_ch32_0724_noisy_16 --model SFIGF --dataset NoisyMiddlebury --scale 16 --interpolation bicubic --data_root ./data/Middlebury --base_channel 32 --noisy --save
+# OMP_NUM_THREADS=8 CUDA_VISIBLE_DEVICES=0 python main.py --test --checkpoint ./workspace/checkpoints/girnet_sca_ch48_0721_noisy_8.pth.tar --name girnet_sca_ch48_0721_noisy_8 --model SFIGF --dataset NoisyMiddlebury --scale 8 --interpolation bicubic --data_root ../data/Middlebury --base_channel 48 --noisy 
+# OMP_NUM_THREADS=8 CUDA_VISIBLE_DEVICES=0 python main.py --test --checkpoint ./workspace/checkpoints/girnet_sca_ch48_0718_noisy_16.pth.tar --name girnet_sca_ch48_0721_noisy_16 --model SFIGF --dataset NoisyMiddlebury --scale 16 --interpolation bicubic --data_root ../data/Middlebury --base_channel 48 --noisy 
+
+# OMP_NUM_THREADS=8 CUDA_VISIBLE_DEVICES=1 python main.py --test --checkpoint ./workspace/checkpoints/girnet_ca_ch32_0723_noisy_4.pth.tar --name girnet_ca_ch48_0723_noisy_4 --model SFIGF --dataset NYU --scale 4 --interpolation bicubic --data_root /home/amax/Documents/yxxxl/oridata/NYU_test --base_channel 32 --noisy 
+# OMP_NUM_THREADS=8 CUDA_VISIBLE_DEVICES=0 python main.py --test --checkpoint ./workspace/checkpoints/girnet_ca_ch32_0723_noisy_8.pth.tar --name girnet_ca_ch32_0723_noisy_8 --model SFIGF --dataset NYU --scale 8 --interpolation bicubic --data_root /home/amax/Documents/yxxxl/oridata/NYU_test --base_channel 32 --noisy 
+# OMP_NUM_THREADS=8 CUDA_VISIBLE_DEVICES=0 python main.py --test --checkpoint ./workspace/checkpoints/girnet_ca_ch32_0724_noisy_16.pth.tar --name girnet_ca_ch32_0724_noisy_16 --model SFIGF --dataset NYU --scale 16 --interpolation bicubic --data_root /home/amax/Documents/yxxxl/oridata/NYU_test --base_channel 32 --noisy
+
+# OMP_NUM_THREADS=8 CUDA_VISIBLE_DEVICES=1 python main.py --test --checkpoint ./workspace/checkpoints/girnet_ca_ch48_0723_noisy_4.pth.tar --name girnet_ca_ch48_0723_noisy_4 --model SFIGF --dataset Lu --scale 4 --interpolation bicubic --data_root ./data/03_RGBD_Dataset --base_channel 48 --noisy 
+# # OMP_NUM_THREADS=8 CUDA_VISIBLE_DEVICES=0 python main.py --test --checkpoint ./workspace/checkpoints/girnet_sca_ch48_0721_noisy_8.pth.tar --name girnet_sca_ch48_0721_noisy_8 --model SFIGF --dataset Lu --scale 8 --interpolation bicubic --data_root ./data/03_RGBD_Dataset --base_channel 48 --noisy 
+# OMP_NUM_THREADS=8 CUDA_VISIBLE_DEVICES=0 python main.py --test --checkpoint ./workspace/checkpoints/girnet_sca_ch48_0718_noisy_16.pth.tar --name girnet_sca_ch48_0721_noisy_16 --model SFIGF --dataset Lu --scale 16 --interpolation bicubic --data_root ./data/03_RGBD_Dataset --base_channel 48 --noisy 
+
+ 
